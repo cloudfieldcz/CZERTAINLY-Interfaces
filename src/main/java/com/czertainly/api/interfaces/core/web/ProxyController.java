@@ -4,6 +4,7 @@ import com.czertainly.api.exception.AlreadyExistException;
 import com.czertainly.api.exception.NotFoundException;
 import com.czertainly.api.interfaces.AuthProtectedController;
 import com.czertainly.api.model.client.proxy.ProxyRequestDto;
+import com.czertainly.api.model.client.proxy.ProxyUpdateRequestDto;
 import com.czertainly.api.model.common.ErrorMessageDto;
 import com.czertainly.api.model.common.UuidDto;
 import com.czertainly.api.model.core.proxy.ProxyDto;
@@ -21,7 +22,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequestMapping("/v1/proxies")
 @Tag(name = "Proxy Management", description = "Proxy Management API")
@@ -54,4 +54,14 @@ public interface ProxyController extends AuthProtectedController {
     @PostMapping(consumes = {"application/json"}, produces = {"application/json"})
     ResponseEntity<?> createProxy(@RequestBody ProxyRequestDto request)
         throws AlreadyExistException;
+
+    @Operation(summary = "Edit a Proxy")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Proxy updated"),
+        @ApiResponse(responseCode = "422", description = "Unprocessable Entity", content = @Content(array = @ArraySchema(schema = @Schema(implementation = String.class)),
+            examples = {@ExampleObject(value = "[\"Error Message 1\",\"Error Message 2\"]")}))
+    })
+    @PutMapping(path = "/{uuid}", consumes = {"application/json"}, produces = {"application/json"})
+    ProxyDto editProxy(@Parameter(description = "Proxy UUID") @PathVariable String uuid, @RequestBody ProxyUpdateRequestDto request)
+        throws NotFoundException;
 }
