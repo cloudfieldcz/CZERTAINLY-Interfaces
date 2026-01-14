@@ -18,6 +18,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -64,4 +65,10 @@ public interface ProxyController extends AuthProtectedController {
     @PutMapping(path = "/{uuid}", consumes = {"application/json"}, produces = {"application/json"})
     ProxyDto editProxy(@Parameter(description = "Proxy UUID") @PathVariable String uuid, @RequestBody ProxyUpdateRequestDto request)
         throws NotFoundException;
+
+    @Operation(summary = "Delete a Proxy")
+    @ApiResponses(value = {@ApiResponse(responseCode = "204", description = "Proxy deleted")})
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping(path = "/{uuid}", produces = {"application/json"})
+    void deleteProxy(@Parameter(description = "Proxy UUID") @PathVariable String uuid) throws NotFoundException;
 }
