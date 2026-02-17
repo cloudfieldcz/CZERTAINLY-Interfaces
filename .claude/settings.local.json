@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn help:describe:*)",
+      "Bash(git log:*)"
+    ]
+  }
+}
