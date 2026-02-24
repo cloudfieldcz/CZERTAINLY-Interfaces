@@ -37,6 +37,10 @@ public class ConnectorRequestDto implements Named {
         requiredMode = Schema.RequiredMode.NOT_REQUIRED)
     private String proxyUuid;
 
+    @Schema(description = "Code of the Proxy that forwarded this registration request",
+        requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+    private String proxyCode;
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
@@ -46,6 +50,7 @@ public class ConnectorRequestDto implements Named {
                 .append("authAttributes", authAttributes)
                 .append("customAttributes", customAttributes)
                 .append("proxyUuid", proxyUuid)
+                .append("proxyCode", proxyCode)
                 .toString();
     }
 }

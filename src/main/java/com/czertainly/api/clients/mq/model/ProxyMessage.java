@@ -10,10 +10,11 @@ import java.time.Instant;
  * Message envelope for proxy-to-core communication.
  * This is the top-level message received from the proxy via message queue.
  *
- * <p>Used for two message types:</p>
+ * <p>Used for three message types:</p>
  * <ul>
  *   <li>Connector responses: Contains correlationId and connectorResponse</li>
  *   <li>Health checks: Contains only proxyId, messageType="health.check", and timestamp</li>
+ *   <li>Connector registration: Contains connectorRegistrationRequest, messageType="connector.register"</li>
  * </ul>
  */
 @Getter
@@ -45,6 +46,9 @@ public class ProxyMessage implements Serializable {
 
     @Schema(description = "Connector response data. Null for health check messages.")
     private ConnectorResponse connectorResponse;
+
+    @Schema(description = "Connector registration request data. Null for non-registration messages.")
+    private ConnectorRegistrationRequest connectorRegistrationRequest;
 
     /**
      * Check if this is a health check message.
