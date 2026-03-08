@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.github.cloudfieldcz</groupId>
+  <artifactId>CZERTAINLY-Interfaces</artifactId>
+  <versioning>
+    <lastUpdated>20260308131153</lastUpdated>
+    <snapshot>
+      <timestamp>20260308.131153</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>main-saas-20260308.131153-1</value>
+        <updated>20260308131153</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>main-saas-20260308.131153-1</value>
+        <updated>20260308131153</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>main-saas-SNAPSHOT</version>
+</metadata>
