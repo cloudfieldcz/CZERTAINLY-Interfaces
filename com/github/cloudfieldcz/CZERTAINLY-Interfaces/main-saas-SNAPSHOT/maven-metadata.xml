@@ -3,21 +3,21 @@
   <groupId>com.github.cloudfieldcz</groupId>
   <artifactId>CZERTAINLY-Interfaces</artifactId>
   <versioning>
-    <lastUpdated>20260413120513</lastUpdated>
+    <lastUpdated>20260413132305</lastUpdated>
     <snapshot>
-      <timestamp>20260413.120513</timestamp>
+      <timestamp>20260413.132305</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>main-saas-20260413.120513-1</value>
-        <updated>20260413120513</updated>
+        <value>main-saas-20260413.132305-1</value>
+        <updated>20260413132305</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>main-saas-20260413.120513-1</value>
-        <updated>20260413120513</updated>
+        <value>main-saas-20260413.132305-1</value>
+        <updated>20260413132305</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
