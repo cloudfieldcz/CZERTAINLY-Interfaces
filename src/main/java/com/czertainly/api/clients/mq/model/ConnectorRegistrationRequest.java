@@ -33,6 +33,7 @@ public class ConnectorRegistrationRequest implements Serializable {
             requiredMode = Schema.RequiredMode.REQUIRED)
     private String authType;
 
+    @ToString.Exclude
     @Schema(description = "List of authentication Attributes")
     private List<Object> authAttributes;
 

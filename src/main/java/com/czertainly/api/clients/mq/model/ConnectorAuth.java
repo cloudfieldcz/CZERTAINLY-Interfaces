@@ -23,6 +23,7 @@ public class ConnectorAuth implements Serializable {
             requiredMode = Schema.RequiredMode.REQUIRED)
     private String type;
 
+    @ToString.Exclude
     @Schema(description = "Authentication attributes based on type. " +
             "BASIC: {username, password}. " +
             "API_KEY: {headerName, apiKey}. " +

@@ -44,6 +44,7 @@ public class ConnectorRequest implements Serializable {
     @Schema(description = "Additional HTTP headers to include in the request")
     private Map<String, String> headers;
 
+    @ToString.Exclude
     @Schema(description = "Request body (JSON object)")
     private Object body;
 
@@ -55,6 +56,7 @@ public class ConnectorRequest implements Serializable {
     @Schema(description = "Retry policy configuration")
     private RetryPolicy retryPolicy;
 
+    @ToString.Exclude
     @Schema(description = "Credential data to merge into request body under 'credential' key")
     private Map<String, Object> credentialData;
 
